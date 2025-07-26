@@ -1,0 +1,13 @@
+/* src/components/HeroSection.css */
+.hero-section {
+  height: 90vh;
+  background-image: url('../assets/church_wall.jpeg');
+  background-size: cover;
+  /* background-position: center; */
+  position: relative;
+}
+.hero-section .cont {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100% !important;
+}

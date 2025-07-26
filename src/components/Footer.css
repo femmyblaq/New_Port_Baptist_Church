@@ -1,0 +1,24 @@
+.footer-section {
+  background: linear-gradient(135deg, #0f1010, #29292a);
+  color: #ecf0f1;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social-icons a {
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00d1b2;
+}
