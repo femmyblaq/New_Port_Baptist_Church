@@ -1,35 +1,26 @@
 import { ThemeProvider } from './context/ThemeContext'
 import './App.css'
-// import Navbar from './components/Navbar'
+import TopNavbar from "./components/TopNavbar"
+
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import { Routes, Route } from 'react-router-dom'
-import Programs from './components/Programs'
-import Events from './components/Events'
 import Footer from './components/Footer'
-import Anthem from './components/Anthem'
-import Calendar from './components/Calender'
-import MemberList from './components/MemberList'
+
+import JoinMember from './Pages/JoinMember'
 function App() {
 
   return (
     <>
       <ThemeProvider>
-        {/* <Navbar></Navbar> */}
+            <TopNavbar></TopNavbar>
         <Routes>
           <Route path='/' element={<Home></Home>} />
           <Route path='/about' element={<About></About>} />
           <Route path='/dashboard' element={<Dashboard></Dashboard>} />
+          <Route path='/join-member' element={<JoinMember />} />
         </Routes>
-        <Anthem />
-        <Programs />
-        <Events />
-        <div className="container">
-            <Calendar />
-        </div>
-        
-        <MemberList />
         <Footer />
       </ThemeProvider>
     </>

@@ -53,7 +53,7 @@ function Footer() {
 
         {/* Copyright */}
         <div className="text-center small pt-2">
-          © {new Date().getFullYear()} FaithConnect. All rights reserved.
+          © {new Date().getFullYear()} New Port Baptist Church. All rights reserved.
         </div>
       </div>
     </footer>
