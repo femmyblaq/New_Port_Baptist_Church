@@ -7,11 +7,11 @@ import gathering from '../assets/gathering.jpg'; // Assuming you have an image t
 export default function JoinMember() {
   return (
     // <Container className="mt-5">
-      <div className="row p-5 ">
+      <div className="row p-5">
         <div className="col-lg-6 ">
           <img className='border-2' width={500} src={gathering} alt="" />
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 px-5">
           <FormComponent />
         </div>
       </div>
