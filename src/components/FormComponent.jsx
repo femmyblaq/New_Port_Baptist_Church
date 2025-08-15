@@ -12,7 +12,8 @@ import { v4 as uuidv4 } from 'uuid';
 const roles = ["Pastor", "Elder", "Usher", "Choir", "Technical", "Member"];
 function FormComponent(props) {
   const [formData, setFormData] = useState({
-    fullName: '',
+    fName: '',
+    lName: '',
     dob: '',
     jobTitle: '',
     role: 'Member',
@@ -53,7 +54,8 @@ function FormComponent(props) {
 
       alert("Member added successfully!");
       setFormData({
-        fullName: '',
+        fName: '',
+        lName: '',
         dob: '',
         jobTitle: '',
         role: 'Member',
@@ -99,7 +101,7 @@ function FormComponent(props) {
           </div>
           <div className="col-lg-4">
             <Form.Group className="mb-3">
-              <Form.Label>Role</Form.Label>
+              <Form.Label>Role In Church</Form.Label>
               <Form.Select name="role" value={formData.role} onChange={handleChange}>
                 {roles.map(role => (
                   <option key={role} value={role}>{role}</option>

@@ -37,3 +37,9 @@
   transform: scale(1.1);
   z-index: 10;
 }
+
+
+
+.card .card-body {
+  text-wrap: nowrap;
+}

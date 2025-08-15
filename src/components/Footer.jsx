@@ -1,7 +1,7 @@
 // src/components/Footer.js
 import React from 'react';
 import './Footer.css';
-import navLogo from "../assets/church_logo1-removebg.png"
+import navLogo from "../assets/NPBC.png";
 
 function Footer() {
   return (
@@ -10,7 +10,7 @@ function Footer() {
         <div className="row text-md-left text-center">
           {/* Logo / About */}
           <div className="col-md-4 mb-4">
-            <img width= "50" height="50" src={navLogo} alt="" />
+            <img width= "100" height="100" src={navLogo} alt="" />
             {/* <h4 className="fw-bold">FaithConnect</h4> */}
             <p>
               Empowering communities through spiritual guidance, outreach programs, and a shared mission of hope and compassion.
@@ -21,8 +21,8 @@ function Footer() {
           <div className="col-md-2 mb-4">
             <h6 className="text-uppercase fw-bold mb-3">Quick Links</h6>
             <ul className="list-unstyled">
-              <li><a href="#" className="footer-link">Home</a></li>
-              <li><a href="#" className="footer-link">About</a></li>
+              <li><a href="/" className="footer-link">Home</a></li>
+              <li><a href="/about" className="footer-link">About</a></li>
               <li><a href="#" className="footer-link">Programs</a></li>
               <li><a href="#" className="footer-link">Events</a></li>
               <li><a href="#" className="footer-link">Contact</a></li>
@@ -31,20 +31,21 @@ function Footer() {
 
           {/* Contact Info */}
           <div className="col-md-3 mb-4">
-            <h6 className="text-uppercase fw-bold mb-3">Contact</h6>
-            <p><i className="bi bi-geo-alt-fill me-2"></i>123 Church Lane, Faith City</p>
-            <p><i className="bi bi-envelope-fill me-2"></i>info@faithconnect.org</p>
-            <p><i className="bi bi-telephone-fill me-2"></i>+1 234 567 8900</p>
+            <h6 className="text-uppercase text-left fw-bold mb-3">Contact</h6>
+            <p className="d-flex gap-1"><i class="ri-map-pin-fill"></i><span> 63A, Oscar Ibru Way (formerly Marine Road), G.R.A., Apapa.</span></p>
+            <p className="d-flex gap-1"><i class="ri-mail-fill"></i><span> newportbcapapa@gmail.com</span></p>
+            <p className="d-flex gap-1"><i class="ri-phone-fill"></i><span> +234 706 5383 623, +234 803 5245 395</span></p>
+            {/* <p className="d-flex gap-1 m-4" ><span > </span></p> */}
           </div>
 
           {/* Social Icons */}
           <div className="col-md-3 mb-4">
             <h6 className="text-uppercase fw-bold mb-3">Follow Us</h6>
             <div className="social-icons">
-              <a href="#" className="text-light me-3"><i className="bi bi-facebook"></i></a>
-              <a href="#" className="text-light me-3"><i className="bi bi-twitter"></i></a>
-              <a href="#" className="text-light me-3"><i className="bi bi-instagram"></i></a>
-              <a href="#" className="text-light me-3"><i className="bi bi-youtube"></i></a>
+              <a target='_black' href="https://www.facebook.com/newport.baptistchurch/" className="text-light text-decoration-none me-3"><i class="ri-facebook-box-fill"></i></a>
+              <a target='_black' href="https://www.instagram.com/newportbcapapa" className="text-light me-3 text-decoration-none"><i class="ri-instagram-fill"></i></a>
+              <a target='_black' href="https://twitter.com/newportbcapapa" className="text-light me-3 text-decoration-none"><i class="ri-twitter-x-line"></i></a>
+              <a target='_black' href="https://youtube.com/@newportbcapapa" className="text-light me-3 text-decoration-none"><i class="ri-youtube-fill"></i></a>
             </div>
           </div>
         </div>
