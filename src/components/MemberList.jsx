@@ -1,25 +1,25 @@
 import React from 'react';
 import './MemberList.css';
-import pastor1 from '../assets/Pastors Images/pastor1.jpg';
-import pastor2 from '../assets/Pastors Images/pastor2.jpg';
-import pastor3 from '../assets/Pastors Images/pastor3.jpg';
-import pastor4 from '../assets/Pastors Images/pastor4.jpg';
-import pastor5 from '../assets/Pastors Images/pastor5.jpg';
-import pastor6 from '../assets/Pastors Images/pastor6.jpg';
-import pastor7 from '../assets/Pastors Images/pastor7.jpg';
-import pastor8 from '../assets/Pastors Images/pastor8.jpg';
+import pastor1 from '../assets/Pastors Images/mustapha.jpeg';
+// import pastor2 from '../assets/Pastors Images/pastor2.jpg';
+// import pastor3 from '../assets/Pastors Images/pastor3.jpg';
+import pastor4 from '../assets/Pastors Images/rev_adeshina.jpg';
+// import pastor5 from '../assets/Pastors Images/gbugbemi.jpeg';
+import pastor6 from '../assets/Pastors Images/gbenga.jpeg';
+// import pastor7 from '../assets/Pastors Images/pastor7.jpg';
+import pastor8 from '../assets/Pastors Images/isaac.jpeg';
 
 const members = [
   { id: 1, name: 'Samuel Mustapha', position: 'Prayer', img: pastor1 },
   { id: 2, name: 'Isaac Ipadeola', position: 'Choir Leader', img: pastor8 },
   { id: 4, name: 'Adesina Abegunde', position: 'Head of Pastors', img: pastor4 }, // Giant one
-  { id: 3, name: 'Samson Isola', position: 'Secretariat', img: pastor3 },
-  { id: 6, name: 'James Wilson', position: 'Finance', img: pastor6 },
-  { id: 5, name: 'Erica Okorodudu', position: 'Children Ministry', img: pastor5 },
+  // { id: 3, name: 'Samson Isola', position: 'Secretariat', img: pastor3 },
+  // { id: 6, name: 'Gbubemi', position: 'Finance', img: pastor5 },
+  // { id: 5, name: 'Erica Okorodudu', position: 'Children Ministry', img: pastor5 },
   { id: 8, name: 'Oyetunji Gbenga', position: 'Living Streams', img: pastor6 },
-  { id: 9, name: 'Sunday Ayandiran', position: 'Youth', img: pastor3 },
-  { id: 9, name: 'Korede Alamu', position: 'Evangelism', img: pastor3 },
-  { id: 9, name: 'Mary Oyeniyi', position: 'Security', img: pastor3 }
+  // { id: 9, name: 'Sunday Ayandiran', position: 'Youth', img: pastor3 },
+  // { id: 10, name: 'Korede Alamu', position: 'Evangelism', img: pastor3 },
+  // { id: 11, name: 'Mary Oyeniyi', position: 'Security', img: pastor3 }
 ];
 
 const MemberList = () => {

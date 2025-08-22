@@ -1,5 +1,6 @@
 .dark {
-  background-color: rgba(0, 0, 0);
-  /* background-color: #fff; */
-  color: #fff;
+  /* background-color: rgba(0, 0, 0); */
+  background-color: #fff;
+  /* color: #fff; */
+  color: #000;
 }

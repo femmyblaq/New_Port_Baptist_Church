@@ -27,6 +27,7 @@ function FormComponent(props) {
   };
 
   const handleImageChange = e => {
+    console.log(e.target.files[0]);
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -41,7 +42,7 @@ function FormComponent(props) {
     }
 
     setLoading(true);
-
+    console.log("Submitting form data:", formData, image);
     try {
       const imageRef = ref(storage, `members/${uuidv4()}-${image.name}`);
       await uploadBytes(imageRef, image);
@@ -56,8 +57,8 @@ function FormComponent(props) {
       setFormData({
         fName: '',
         lName: '',
-        dob: '',
         jobTitle: '',
+        dob: '',
         role: 'Member',
         joinDate: ''
       });
@@ -117,15 +118,6 @@ function FormComponent(props) {
           </div>
 
         </div>
-
-
-
-
-
-
-
-
-
 
         <Form.Group className="mb-3">
           <Form.Label>Profile Image</Form.Label>

@@ -15,7 +15,7 @@ const TopNavbar = () => (
             <NavDropdown.Item href="#">Demo 2</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Our Church" id="church-dropdown">
-            <NavDropdown.Item href="#">About</NavDropdown.Item>
+            <NavDropdown.Item href="/about">About</NavDropdown.Item>
             <NavDropdown.Item href="#">Mission</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link href="#">Donations</Nav.Link>
