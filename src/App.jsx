@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer'
+import Donation from './Pages/Donation'
 
 import JoinMember from './Pages/JoinMember'
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about' element={<About></About>} />
           <Route path='/dashboard' element={<Dashboard></Dashboard>} />
           <Route path='/join-member' element={<JoinMember />} />
+          <Route path='/donation' element={<Donation />} />
         </Routes>
         <Footer />
       </ThemeProvider>

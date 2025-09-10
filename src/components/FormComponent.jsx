@@ -9,8 +9,25 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
+
+import axios from "axios";
+
+
+
+
+
+
 const roles = ["Pastor", "Elder", "Usher", "Choir", "Technical", "Member"];
 function FormComponent(props) {
+
+  const API_URL = "http://127.0.0.1:8000/api/members/"; // change for production
+
+// Fetch members
+//  const getMembers = async () => {
+//   const res = await axios.get(API_URL);
+//   return res.data;
+// };
+// getMembers();
   const [formData, setFormData] = useState({
     fName: '',
     lName: '',
@@ -19,7 +36,7 @@ function FormComponent(props) {
     role: 'Member',
     joinDate: ''
   });
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = e => {
@@ -28,30 +45,37 @@ function FormComponent(props) {
 
   const handleImageChange = e => {
     console.log(e.target.files[0]);
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
+  //   if (e.target.files[0]) {
+  //     setImage(e.target.files[0]);
+  //   }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!image) {
-      alert("Please upload a profile image.");
-      return;
-    }
+    // if (!image) {
+    //   alert("Please upload a profile image.");
+    //   return;
+    // }
 
-    setLoading(true);
-    console.log("Submitting form data:", formData, image);
-    try {
-      const imageRef = ref(storage, `members/${uuidv4()}-${image.name}`);
-      await uploadBytes(imageRef, image);
-      const imageUrl = await getDownloadURL(imageRef);
+    // setLoading(true);
+    // console.log("Submitting form data:", formData, image);
+    // try {
+    //   const imageRef = ref(storage, `members/${uuidv4()}-${image.name}`);
+    //   await uploadBytes(imageRef, image);
+    //   const imageUrl = await getDownloadURL(imageRef);
 
-      await addDoc(collection(db, "members"), {
-        ...formData,
-        imageUrl,
-      });
+    //   await addDoc(collection(db, "members"), {
+    //     ...formData,
+    //     imageUrl,
+    //   });
+
+
+      try {
+      const res = await axios.post(API_URL, formData);
+      console.log("Saved:", res.data);
+    
+
 
       alert("Member added successfully!");
       setFormData({

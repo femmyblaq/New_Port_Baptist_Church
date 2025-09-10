@@ -2,6 +2,7 @@
 import React from 'react';
 import './Footer.css';
 import navLogo from "../assets/NPBC.png";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -21,11 +22,11 @@ function Footer() {
           <div className="col-md-2 mb-4">
             <h6 className="text-uppercase fw-bold mb-3">Quick Links</h6>
             <ul className="list-unstyled">
-              <li><a href="/" className="footer-link">Home</a></li>
-              <li><a href="/about" className="footer-link">About</a></li>
-              <li><a href="#" className="footer-link">Programs</a></li>
-              <li><a href="#" className="footer-link">Events</a></li>
-              <li><a href="#" className="footer-link">Contact</a></li>
+              <li><Link to="/" className="footer-link">Home</Link></li>
+              <li><Link to="/about" className="footer-link">About</Link></li>
+              <li><Link to="/program" className="footer-link">Programs</Link></li>
+              <li><Link to="/events" className="footer-link">Events</Link></li>
+              <li><Link to="/contact" className="footer-link">Contact</Link></li>
             </ul>
           </div>
 

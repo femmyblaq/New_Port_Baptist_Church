@@ -10,15 +10,16 @@ const TopNavbar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          <NavDropdown title="Demos" id="demos-dropdown">
+          {/* <NavDropdown title="Demos" id="demos-dropdown">
             <NavDropdown.Item href="#">Demo 1</NavDropdown.Item>
             <NavDropdown.Item href="#">Demo 2</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
           <NavDropdown title="Our Church" id="church-dropdown">
             <NavDropdown.Item href="/about">About</NavDropdown.Item>
             <NavDropdown.Item href="#">Mission</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="#">Donations</Nav.Link>
+          <Nav.Link href="/donation">Donations</Nav.Link>
+          <Nav.Link href="#">Home Fellowship Centers</Nav.Link>
           <NavDropdown title="Events" id="events-dropdown">
             <NavDropdown.Item href="#">Upcoming</NavDropdown.Item>
           </NavDropdown>
