@@ -19,7 +19,7 @@ const TopNavbar = () => (
             <NavDropdown.Item href="#">Mission</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link href="/donation">Donations</Nav.Link>
-          <Nav.Link href="#">Home Fellowship Centers</Nav.Link>
+          <Nav.Link href="home-fellowship-centers">Home Fellowship Centers</Nav.Link>
           <NavDropdown title="Events" id="events-dropdown">
             <NavDropdown.Item href="#">Upcoming</NavDropdown.Item>
           </NavDropdown>
