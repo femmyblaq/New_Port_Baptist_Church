@@ -1,101 +1,105 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import locationMap from "../assets/locationMap2.jpg";
 
-export default function Hfc() {
-    const sample = [
-{
-id: 1,
-name: "Head Office",
-branch: "Lagos Branch",
-addressLines: ["12 Freedom Way", "Victoria Island", "Lagos, Nigeria"],
-phone: "+234 800 000 0001",
-email: "lagos@company.com",
-img: "https://source.unsplash.com/600x400/?map,location",
-},
-{
-id: 2,
-name: "Regional Office",
-branch: "Abuja Branch",
-addressLines: ["45 Unity Road", "Central Business District", "Abuja, Nigeria"],
-phone: "+234 800 000 0002",
-email: "abuja@company.com",
-img: "https://source.unsplash.com/600x400/?gps,location",
-},
-{
-id: 3,
-name: "Warehouse",
-branch: "Port Harcourt Branch",
-addressLines: ["8 Harbour Lane", "Riverside", "Port Harcourt, Nigeria"],
-phone: "+234 800 000 0003",
-email: "ph@company.com",
-img: "https://source.unsplash.com/600x400/?pin,map",
-},
-];
+const Hfc = () => {
+  const branches = [
+    {
+      city: "MARINE ROAD CENTRE",
+      address: "96, Oscar Ibru Way (Fomerly Marine Road), G.R.A. Apapa",
+        leader: "Bro. Abraham Benneth",
+        contact: "08090510891",
+    },
+    {
+      city: "CHILD AVENUE CENTRE",
+      address: "24, Child Avenue, G.R.A. Apapa",
+        leader: "Sis. Theresa Affi",
+        contact: "07045933147",
+    },
+    {
+      city: "LIVERPOOL CENTRE",
+      address: "Block 'C', Room 12, Signal Barracks, G.R.A. Apapa",
+      leader: "Bro. Sunday Ayandiran",
+        contact: "07065630894",
+    },
+    {
+      city: "AJEGUNLE CENTRE",
+      address: "1A, Kojo Lane, After Arunah Street, Ajegunle",
+        leader: "Bro. Sunday Ayandiran",
+        contact: "08160543300",
+    },
+    {
+      city: "OLODI APAPA CENTRE",
+      address: "22, Oremeji Street, Olodi Apapa",
+      leader: "Sis. Joke Ewvoro",
+        contact: "07035653553",
+    },
+    {
+      city: "MANAGER ISLAND CENTRE",
+      address: "",
+      leader: "Sis. Benny Adewoye",
+        contact: "07037899420",
+    },
+    {
+      city: "QUEENS BARRACK CENTRE",
+      address: "Old Block '2', Queens Barracks, Off Calcuta Road, Apapa.",
+      leader: "Sis. Alaere Dakoru",
+        contact: "08124708385",
+    },
+    {
+      city: "AGUDA CENTRE",
+      address: "22B, Adebola Ojomu Street, beside J.S. Margaret Schools, Aguda",
+      leader: "Bro. Adeyemi Adedeji",
+        contact: "07032985436",
+    },
+    {
+      city: "OKOTA CENTRE",
+      address: "5, Ayo Shonubi street, Off Alli Dada Street, Ago Palace Way, Okota.",
+      leader: "Bro. Isaac Ipadeola",
+        contact: "07064985436",
+    },
+    {
+      city: "NAVY BARRACK CENTRE",
+      address: "Block 15C, Obisesan Navy barracks, Off Mobil Road, Apapa.",
+      leader: "Sis. Chalya Garba",
+        contact: "07084473722",
+    },
+  ];
+
   return (
-    <div className="container py-3">
-<div className="row gy-3">
-{data.map((b, i) => {
-const color = borderClasses[i % borderClasses.length];
-return (
-<div key={b.id || i} className="col-12">
-<div className={`card border-${color} border-3 shadow-sm`}>
-<div className="row g-0 align-items-center">
-{/* left: text content */}
-<div className="col-md-8 p-3">
-<h5 className="card-title mb-1">{b.name}</h5>
-<p className="mb-1 text-muted small">{b.branch}</p>
+    <div className="container my-5">
+        <h2 className="text-center mb-3">HOME FELLOWSHIP CENTERS</h2>
+      <div className="row g-3">
+        {/* Left Side - Addresses */}
+        <div className="col-md-6">
+          {branches.map((branch, index) => (
+            <div className="card mb-3 shadow-sm" key={index}>
+              <div className="card-body">
+                <h5 className="card-title">{branch.city} Branch</h5>
+                <p className="card-text">{branch.address}</p>
+                <p className="card-text">
+                  <strong>Leader:</strong> {branch.leader}
+                </p>
+                <p className="card-text">
+                  <strong>Contact:</strong> {branch.contact}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
 
+        {/* Right Side - Giant Image */}
+        <div className="col-md-6 d-flex">
+          <img
+            src={locationMap}
+            alt="Branches"
+            className="img-fluid w-100 rounded shadow-sm"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-<address className="mb-2">
-{b.addressLines &&
-b.addressLines.map((line, idx) => (
-<div key={idx}>{line}</div>
-))}
-</address>
-
-
-<div className="d-flex flex-wrap gap-3 small">
-{b.phone && (
-<div>
-<strong>Phone: </strong>
-<a href={`tel:${b.phone}`}>{b.phone}</a>
-</div>
-)}
-{b.email && (
-<div>
-<strong>Email: </strong>
-<a href={`mailto:${b.email}`}>{b.email}</a>
-</div>
-)}
-</div>
-</div>
-
-
-{/* right: image */}
-<div className="col-md-4 d-none d-md-block">
-<img
-src={b.img}
-alt={`Location for ${b.branch}`}
-className="img-fluid rounded-end"
-style={{ height: "100%", objectFit: "cover", width: "100%" }}
-/>
-</div>
-</div>
-
-
-{/* responsive image for small screens */}
-<div className="d-md-none">
-<img
-src={b.img}
-alt={`Location for ${b.branch}`}
-className="img-fluid w-100"
-style={{ objectFit: "cover", maxHeight: 220 }}
-/>
-</div>
-</div>
-</div>
-);
-})}
-</div>
-</div>
-  )
-}
+export default Hfc;
