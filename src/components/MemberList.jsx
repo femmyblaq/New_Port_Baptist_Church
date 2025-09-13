@@ -6,7 +6,7 @@ import pastor1 from '../assets/Pastors Images/mustapha.jpeg';
 import pastor4 from '../assets/Pastors Images/revadeshina.jpg';
 import pastor5 from '../assets/Pastors Images/gbubemi.jpg';
 import pastor6 from '../assets/Pastors Images/gbenga.jpeg';
-// import pastor7 from '../assets/Pastors Images/pastor7.jpg';
+import pastor7 from '../assets/Pastors Images/pastoralamu.jpeg';
 import pastor8 from '../assets/Pastors Images/isaac.jpeg';
 
 const members = [
@@ -18,7 +18,7 @@ const members = [
   // { id: 5, name: 'Erica Okorodudu', position: 'Children Ministry', img: pastor5 },
   { id: 8, name: 'Oyetunji Gbenga', position: 'Living Streams', img: pastor6 },
   { id: 9, name: 'Sunday Ayandiran', position: 'Youth', img: pastor8 },
-  { id: 10, name: 'Korede Alamu', position: 'Evangelism', img: pastor1 },
+  { id: 10, name: 'Korede Alamu', position: 'Evangelism', img: pastor7 },
   { id: 11, name: 'Mary Oyeniyi', position: 'Security', img: pastor4 }
 ];
 
