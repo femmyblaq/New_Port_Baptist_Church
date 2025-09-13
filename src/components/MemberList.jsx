@@ -3,7 +3,7 @@ import './MemberList.css';
 import pastor1 from '../assets/Pastors Images/mustapha.jpeg';
 // import pastor2 from '../assets/Pastors Images/pastor2.jpg';
 // import pastor3 from '../assets/Pastors Images/pastor3.jpg';
-import pastor4 from '../assets/Pastors Images/rev_adeshina.jpg';
+import pastor4 from '../assets/Pastors Images/revadeshina.jpg';
 import pastor5 from '../assets/Pastors Images/gbubemi.jpg';
 import pastor6 from '../assets/Pastors Images/gbenga.jpeg';
 // import pastor7 from '../assets/Pastors Images/pastor7.jpg';
