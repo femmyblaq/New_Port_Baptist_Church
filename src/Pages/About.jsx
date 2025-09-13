@@ -6,7 +6,7 @@ function About() {
   return (
     <>
     <div className="text-center">
-      <h1>About Page</h1>
+      <h1 className="mt-4">About Page</h1>
       <Link to="/" className="text-white fw-bold">Home Page</Link>
 </div>
       <div className="container">
