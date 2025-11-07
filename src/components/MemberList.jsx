@@ -13,7 +13,7 @@ import pastor9 from '../assets/Pastors Images/samson2.jpeg';
 const members = [
   // { id: 1, name: 'Samuel Mustapha', position: 'Prayer', img: pastor1 },
   // { id: 2, name: 'Isaac Ipadeola', position: 'Choir Leader', img: pastor8 },
-  { id: 4, name: 'Adesina Abegunde', position: 'Head of Pastors', img: pastor4 }, // Giant one
+  { id: 4, name: 'Rev. Dr. Adesina Abegunde', position: 'Head of Pastors', img: pastor4 }, // Giant one
   // { id: 3, name: 'Samson Isola', position: 'Secretariat', img: pastor9 },
   // { id: 6, name: 'Gbubemi', position: 'Finance', img: pastor5 },
   //  { id: 5, name: 'Erica Okorodudu', position: 'Children Ministry', img: pastor5 },

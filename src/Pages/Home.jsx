@@ -3,9 +3,10 @@ import { ThemeContext } from "../context/ThemeContext"
 import { Link } from "react-router-dom"
 import HeroSection from "../components/HeroSection"
 import Programs from '../components/Programs'
-import Events from '../components/Events'
+import WorshipArea from '../components/WorshipArea'
 import Anthem from '../components/Anthem'
-import Calendar from '../components/Calender'
+// import Calendar from '../components/Calender'
+import NpbcObjectives from '../components/NpbcObjectives'
 import MemberList from '../components/MemberList'
 import EventCards from "../components/EventCard"
 
@@ -18,12 +19,13 @@ const {theme, toggleTheme} = useContext(ThemeContext)
       {/* <h1>Home Page</h1>
         <Link to="/about">About Page</Link>
         <Link to="/dashboard">Dashboard Page</Link> */}
-        <Anthem />
+        <NpbcObjectives />
         <Programs />
-        <Events />
+        <WorshipArea />
         <div className="container">
             <EventCards />
         </div>
+        <Anthem />
         
         <MemberList />
     </>

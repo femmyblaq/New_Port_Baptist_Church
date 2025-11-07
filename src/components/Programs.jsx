@@ -1,28 +1,31 @@
 // src/components/Programs.js
 import React from 'react';
 import '../components/Program.css'; // optional for styling
-
+import vocational from "../assets/vocational.jpg";
+import church from "../assets/church.jpg";
+import crisis from "../assets/crisis.jpg";
+import justice from "../assets/justice.jpg";
 const programs = [
   {
-    image: '/images/vocations.jpg',
+    image: vocational,
     label: 'Education',
     title: 'Vocations Support',
     description: 'Support the training and formation of future priests, religious sisters, and brothers...',
   },
   {
-    image: '/images/church.jpg',
+    image: church,
     label: 'Emergency',
     title: 'Church Renovation Fund',
     description: 'Raise money for the renovation and maintenance of Catholic churches...',
   },
   {
-    image: '/images/crisis.jpg',
+    image: crisis,
     label: 'Emergency',
     title: 'Crisis Relief Fund',
     description: 'Provide emergency relief and support to communities affected by disasters...',
   },
   {
-    image: '/images/justice.jpg',
+    image: justice,
     label: 'Healthcare',
     title: 'Social Justice Initiatives',
     description: 'Raise funds for Catholic organizations that work to promote social justice...',
@@ -33,7 +36,7 @@ function Programs() {
   return (
     <div className="container my-5">
       <h2 className="text-center mb-3">Programs And Initiatives</h2>
-      <p className="text-center mb-5">
+      <p className="text-center mb-5 fs-5">
         These donation campaigns can help support important Catholic causes and initiatives,
         allowing people to contribute to the Church's mission and work.
       </p>

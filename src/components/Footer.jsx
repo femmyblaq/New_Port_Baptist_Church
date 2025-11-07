@@ -24,8 +24,8 @@ function Footer() {
             <ul className="list-unstyled">
               <li><Link to="/" className="footer-link">Home</Link></li>
               <li><Link to="/about" className="footer-link">About</Link></li>
-              <li><Link to="/program" className="footer-link">Programs</Link></li>
-              <li><Link to="/events" className="footer-link">Events</Link></li>
+              <li><Link to="#" className="footer-link">Programs</Link></li>
+              {/* <li><Link to="/events" className="footer-link">Events</Link></li> */}
               <li><Link to="/contact" className="footer-link">Contact</Link></li>
             </ul>
           </div>
