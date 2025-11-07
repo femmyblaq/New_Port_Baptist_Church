@@ -6,17 +6,17 @@
 .member-img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   object-fit: cover;      /* Ensures the image covers the area without stretching */
   display: block;
   background-position: center;
   margin: 0 auto;
 }
 .giant-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;      /* Ensures the image covers the area without stretching */
+  width: 350px;
+  height: 450px;
+  border-radius: 5px;
+  object-fit: cover;     
   display: block;
   margin: 0 auto;
   background-position: center;

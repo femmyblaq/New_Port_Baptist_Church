@@ -7,7 +7,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 const TopNavbar = () => (
   <Navbar expand="lg" style={{backgroundColor: "black"}} variant="dark" className="py-3">
     <Container>
-      <Navbar.Brand href="/"><img width= "200" height="250" src={navLogo} alt="" /></Navbar.Brand>
+      <Navbar.Brand href="/"><img width= "150" height="160" src={navLogo} alt="" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">

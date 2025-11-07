@@ -7,6 +7,7 @@ import Events from '../components/Events'
 import Anthem from '../components/Anthem'
 import Calendar from '../components/Calender'
 import MemberList from '../components/MemberList'
+import EventCards from "../components/EventCard"
 
 function Home() {
 const {theme, toggleTheme} = useContext(ThemeContext)
@@ -21,7 +22,7 @@ const {theme, toggleTheme} = useContext(ThemeContext)
         <Programs />
         <Events />
         <div className="container">
-            <Calendar />
+            <EventCards />
         </div>
         
         <MemberList />
