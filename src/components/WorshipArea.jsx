@@ -19,7 +19,7 @@ const WorshipArea = () => {
 
           {/* Text Section */}
           <Col md={6}>
-            <h2 className="fw-bold mb-3">A Place of Worship and Connection</h2>
+            <h2 className="fw-bold mb-3 text-primary">A Place of Worship and Connection</h2>
             <p className="text-muted fs-5">
               Join us in heartfelt worship as we connect deeply with God and one another. 
               Experience uplifting music, inspiring messages, and a warm community that 

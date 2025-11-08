@@ -1,63 +1,85 @@
-// src/components/Programs.js
-import React from 'react';
-import '../components/Program.css'; // optional for styling
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../components/Program.css";
 import vocational from "../assets/vocational.jpg";
 import church from "../assets/church.jpg";
 import crisis from "../assets/crisis.jpg";
 import justice from "../assets/justice.jpg";
+
 const programs = [
-  {
-    image: vocational,
-    label: 'Education',
-    title: 'Vocations Support',
-    description: 'Support the training and formation of future priests, religious sisters, and brothers...',
-  },
-  {
-    image: church,
-    label: 'Emergency',
-    title: 'Church Renovation Fund',
-    description: 'Raise money for the renovation and maintenance of Catholic churches...',
-  },
-  {
-    image: crisis,
-    label: 'Emergency',
-    title: 'Crisis Relief Fund',
-    description: 'Provide emergency relief and support to communities affected by disasters...',
-  },
-  {
-    image: justice,
-    label: 'Healthcare',
-    title: 'Social Justice Initiatives',
-    description: 'Raise funds for Catholic organizations that work to promote social justice...',
-  },
+  { image: vocational, title: "Vocations Support" },
+  { image: church, title: "Church Renovation Fund" },
+  { image: crisis, title: "Crisis Relief Fund" },
+  { image: justice, title: "Social Justice Initiatives" },
+  { image: vocational, title: "Youth Empowerment" },
+  { image: church, title: "Mission Support" },
 ];
 
-function Programs() {
+export default function Programs() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % Math.ceil(programs.length / 3));
+      setProgress(0);
+    }, 4000);
+
+    const progressInterval = setInterval(() => {
+      setProgress((p) => (p >= 100 ? 100 : p + 2.5));
+    }, 100);
+
+    return () => {
+      clearInterval(slideInterval);
+      clearInterval(progressInterval);
+    };
+  }, []);
+
+  // Group images into slides of 3
+  const slides = [];
+  for (let i = 0; i < programs.length; i += 3) {
+    slides.push(programs.slice(i, i + 3));
+  }
+
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-3">Programs And Initiatives</h2>
-      <p className="text-center mb-5 fs-5">
-        These donation campaigns can help support important Catholic causes and initiatives,
-        allowing people to contribute to the Church's mission and work.
+    <div className="programs-container my-5 py-4 text-center">
+      <h2 className="text-primary fw-bold mb-3">Programs and Initiatives</h2>
+      <p className="text-muted mb-4 w-75 mx-auto fs-5">
+        These programs highlight our dedication to growth, service, and impact.
       </p>
 
-      <div className="row">
-        {programs.map((program, index) => (
-          <div className="col-md-6 col-lg-3 mb-4" key={index}>
-            <div className="card h-100 shadow-sm">
-              <img src={program.image} className="card-img-top" alt={program.title} />
-              <div className="card-body">
-                <span className="badge bg-light text-dark border mb-2">{program.label}</span>
-                <h5 className="card-title">{program.title}</h5>
-                <p className="card-text">{program.description}</p>
-                <a href="#" className="text-success text-decoration-none">View more →</a>
-              </div>
+      <div className="carousel-wrapper">
+        <div
+          className="d-flex transition-all"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${slides.length * 100}%`,
+          }}
+        >
+          {slides.map((group, groupIndex) => (
+            <div key={groupIndex} className="d-flex justify-content-center w-100">
+              {group.map((program, index) => (
+                <div key={index} className="program-card mx-3">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="program-img rounded-4 shadow"
+                  />
+                  <h5 className="mt-2 fw-semibold">{program.title}</h5>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Progress bar */}
+        <div className="progress-bar-container mt-4 mx-auto">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
       </div>
     </div>
   );
 }
-
-export default Programs;
