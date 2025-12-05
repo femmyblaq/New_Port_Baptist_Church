@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Program.css";
-import vocational from "../assets/vocational.jpg";
+import vocational from "../assets/Economic_mission.jpg";
 import church from "../assets/church.jpg";
 import crisis from "../assets/crisis.jpg";
 import justice from "../assets/justice.jpg";
 
 const programs = [
-  { image: vocational, title: "Vocations Support" },
+  { image: vocational, title: "Health care consultation and orientation" },
   { image: church, title: "Church Renovation Fund" },
   { image: crisis, title: "Crisis Relief Fund" },
   { image: justice, title: "Social Justice Initiatives" },

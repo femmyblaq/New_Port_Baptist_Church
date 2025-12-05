@@ -1,6 +1,6 @@
 // src/components/WorshipArea.js
 import React from 'react';
-import worship from "../assets/worship.jpg";
+import worship from "../assets/group-pics.jpeg";
 import { Container, Row, Col } from 'react-bootstrap';
 
 const WorshipArea = () => {

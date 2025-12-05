@@ -32,6 +32,15 @@ const objectives = [
 
 export default function NpbcObjectives() {
   const [startIndex, setStartIndex] = useState(0);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -40,26 +49,23 @@ export default function NpbcObjectives() {
     return () => clearInterval(slideInterval);
   }, []);
 
-  const visibleCards = [
-    objectives[startIndex],
-    objectives[(startIndex + 1) % objectives.length],
-    objectives[(startIndex + 2) % objectives.length],
-  ];
+  // Determine number of visible cards based on screen size
+  const getVisibleCardsCount = () => {
+    if (screenSize < 576) return 1; // Mobile
+    if (screenSize < 768) return 2; // Tablet
+    return 3; // Desktop
+  };
+
+  const visibleCardsCount = getVisibleCardsCount();
+  const visibleCards = Array.from({ length: visibleCardsCount }, (_, i) =>
+    objectives[(startIndex + i) % objectives.length]
+  );
 
   return (
     <div className="container-fluid my-5 py-5 bg-light position-relative overflow-hidden">
-      <div className="row align-items-center mb-5">
-        {/* Left Side Image */}
-        {/* <div className="col-lg-5 mb-4 mb-lg-0 text-center">
-          <img
-            src={NpbcImg}
-            alt="Worship Session"
-            className="img-fluid rounded-4 shadow-lg npbc-image"
-          />
-        </div> */}
-
+      <div className="row align-items-center mb-5 px-3 px-md-0">
         {/* Title Section */}
-        <div className="col-lg-12 text-center">
+        <div className="col-12 text-center">
           <h2 className="fw-bold text-primary">OBJECTIVES OF NPBC</h2>
           <hr className="w-25 mx-auto border-primary mb-4" />
           <p className="text-muted fs-5 w-75 mx-auto">
@@ -71,12 +77,12 @@ export default function NpbcObjectives() {
       </div>
 
       {/* Carousel Section */}
-      <div className="d-flex justify-content-center align-items-center gap-4 npbc-carousel">
+      <div className="d-flex justify-content-center align-items-center npbc-carousel px-3 px-md-0">
         {visibleCards.map((obj, idx) => (
           <div
             key={idx}
             className={`card border-0 shadow-lg text-center p-4 npbc-card ${
-              idx === 1 ? "active-card" : "inactive-card"
+              idx === Math.floor(visibleCardsCount / 2) ? "active-card" : "inactive-card"
             }`}
           >
             <div className="card-body">
