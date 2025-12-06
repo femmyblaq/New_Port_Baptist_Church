@@ -45,7 +45,9 @@
   transition: width 0.1s linear;
 }
 
-/* Responsive adjustments */
+
+
+/* Tablet */
 @media (max-width: 992px) {
   .program-card {
     width: 250px;
@@ -55,11 +57,39 @@
   }
 }
 
+
+/* Mobile – ONE CARD PER FULL SCREEN */
 @media (max-width: 768px) {
-  .program-card {
-    width: 200px;
+
+  /* Make carousel width equal to number of slides × 100% of the viewport */
+  .carousel-wrapper .d-flex.transition-all {
+    width: calc(100vw * 1 * var(--slide-count));
   }
+
+  /* Each slide takes 100% of the viewport */
+  .carousel-wrapper .w-100 {
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Make the card full width */
+  .program-card {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
   .program-img {
-    height: 200px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+
+  .progress-bar-container {
+    width: 80%;
   }
 }
+
