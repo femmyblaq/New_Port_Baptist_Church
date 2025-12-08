@@ -4,15 +4,22 @@ import "../components/Program.css";
 import vocational from "../assets/Economic_mission.jpg";
 import church from "../assets/Thanksgiving.jpg";
 import crisis from "../assets/R.A_week.jpg";
-import justice from "../assets/choir.jpg";
+import pics1 from "../assets/pics1.jpg";
+import pics2 from "../assets/pics2.jpg";
+import th from "../assets/Thanksgiving-22.jpg";
+import th1 from "../assets/Thanksgiving-1.jpg";
+import th11 from "../assets/Thanksgiving11.jpg";
+
 
 const programs = [
   { image: vocational, title: "Health care consultation and orientation" },
   { image: church, title: "Church Renovation Fund" },
   { image: crisis, title: "Crisis Relief Fund" },
-  { image: justice, title: "Social Justice Initiatives" },
-  { image: vocational, title: "Youth Empowerment" },
-  { image: church, title: "Mission Support" },
+  { image: pics1, title: "Social Justice Initiatives" },
+  { image: pics2, title: "Social Justice Initiatives" },
+  { image: th1, title: "Youth Empowerment" },
+  { image: th11, title: "Mission Support" },
+  { image: th, title: "Mission Support" },
 ];
 
 export default function Programs() {
