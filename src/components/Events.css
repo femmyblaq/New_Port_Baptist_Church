@@ -424,7 +424,71 @@
   .countdown-event-date {
     font-size: 1rem;
   }
+    .event-carousel-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+
+  /* Reduce gap to prevent left/right cut-off */
+  .event-carousel-wrapper {
+    gap: 1rem !important;
+  }
 }
+
+
+
+/* newly added  */
+
+/* Make countdown hero responsive */
+@media (max-width: 768px) {
+  .countdown-hero {
+    padding: 2rem 1rem;
+  }
+
+  .countdown-timer-horizontal {
+    gap: 1rem !important;
+  }
+
+  .timer-unit {
+    min-width: 65px !important;
+    padding: 1rem !important;
+  }
+
+  .timer-value {
+    font-size: 1.8rem !important;
+  }
+
+  .timer-label {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-unit {
+    min-width: 55px !important;
+    padding: 0.8rem !important;
+  }
+
+  .timer-value {
+    font-size: 1.4rem !important;
+  }
+
+  .timer-label {
+    font-size: 0.6rem !important;
+  }
+
+  .countdown-event-info {
+    font-size: 0.85rem !important;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/* newly added  */
+
+
+
+
 @media (max-width: 480px) {
   .countdown-timer-horizontal {
     gap: 0.5rem;
@@ -451,6 +515,10 @@
   }
   .countdown-event-date {
     font-size: 0.85rem;
+  }
+
+  .event-carousel-card {
+    padding: 1.5rem 1rem !important;
   }
 }
 

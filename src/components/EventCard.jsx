@@ -183,25 +183,25 @@ export default function EventCarouselFade() {
             <i className="ri-arrow-left-long-line"></i>
           </button>
           <div
-            className={`d-flex justify-content-center gap-4 flex-wrap ${
-              fade ? "fade-transition" : ""
-            }`}
-          >
+  className={`d-flex justify-content-center gap-4 flex-wrap event-carousel-wrapper ${
+    fade ? "fade-transition" : ""
+  }`}
+>
+
             {visibleEvents.map(([date, activities], idx) => (
               <div
                 key={date}
-                className={`card border-0 shadow-lg text-center py-4 px-3 ${
-                  idx === 1 ? "active-card" : "inactive-card"
-                }`}
+                className={`card border-0 shadow-lg text-center py-4 px-3 event-carousel-card ${idx === 1 ? "active-card" : "inactive-card"
+                  }`}
                 style={{
                   width: "18rem",
                   transition: "all 0.6s ease",
                 }}
               >
+
                 <h5
-                  className={`fw-bold mb-3 ${
-                    idx === 1 ? "text-primary" : "text-secondary"
-                  }`}
+                  className={`fw-bold mb-3 ${idx === 1 ? "text-primary" : "text-secondary"
+                    }`}
                 >
                   {new Date(date).toLocaleDateString("en-US", {
                     weekday: "long",
