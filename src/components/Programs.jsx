@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Program.css";
 import vocational from "../assets/Economic_mission.jpg";
 import church from "../assets/Thanksgiving.jpg";
-import crisis from "../assets/R.A_week.jpg";
+import crisis from "../assets/R.A_Week.jpg";
 import pics1 from "../assets/pics1.jpg";
 import pics2 from "../assets/pics2.jpg";
 import th from "../assets/Thanksgiving-22.jpg";
