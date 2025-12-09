@@ -28,7 +28,7 @@ const MemberList = () => {
     <div className="container my-5">
       <div className="row justify-content-center align-items-end text-center">
         {members.map((member, index) => {
-          const isHead = member.position === 'Head of Pastors';
+          const isHead = member.position === 'Church Pastor';
           return (
             <div
               key={member.id}

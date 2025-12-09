@@ -131,7 +131,7 @@ export default function EventCarouselFade() {
   const [eventDate, activities] = eventEntries[currentIndex];
 
   return (
-    <div className="container-fluid py-5">
+    <div className="container-fluid py-5 px-0">
       {/* Beautiful Horizontal Countdown Timer */}
       <div className="countdown-hero">
         <div className="countdown-timer-horizontal">
@@ -170,7 +170,7 @@ export default function EventCarouselFade() {
         </div>
       </div>
 
-      <div className="container py-5 my-5">
+      <div className="container py-5 my-5 px-0">
         <h2 className="text-center fw-bold mb-4 text-primary">
           Upcoming Church Events
         </h2>
@@ -183,7 +183,7 @@ export default function EventCarouselFade() {
             <i className="ri-arrow-left-long-line"></i>
           </button>
           <div
-  className={`d-flex justify-content-center gap-4 flex-wrap event-carousel-wrapper ${
+  className={` justify-content-center gap-4 flex-wrap event-carousel-wrapper ${
     fade ? "fade-transition" : ""
   }`}
 >
@@ -194,7 +194,7 @@ export default function EventCarouselFade() {
                 className={`card border-0 shadow-lg text-center py-4 px-3 event-carousel-card ${idx === 1 ? "active-card" : "inactive-card"
                   }`}
                 style={{
-                  width: "18rem",
+                  width: "40rem",
                   transition: "all 0.6s ease",
                 }}
               >

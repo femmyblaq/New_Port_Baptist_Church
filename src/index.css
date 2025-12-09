@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
   }
   .hero-section {
-    height: 130vh !important;
+    height: 80vh !important;
     background-position: center !important;
   }
   .cont h1 {
