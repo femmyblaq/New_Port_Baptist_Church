@@ -12,14 +12,14 @@ import th11 from "../assets/Thanksgiving11.jpg";
 
 
 const programs = [
-  { image: vocational, title: "Health care consultation and orientation" },
-  { image: church, title: "Church Renovation Fund" },
-  { image: crisis, title: "Crisis Relief Fund" },
-  { image: pics1, title: "Social Justice Initiatives" },
-  { image: pics2, title: "Social Justice Initiatives" },
-  { image: th1, title: "Youth Empowerment" },
+  { image: vocational, title: "Mission and Outreach" },
+  { image: church, title: "Prayer and Spiritual Warfare" },
+  { image: crisis, title: "Heavenly Ministrations" },
+  { image: pics1, title: "Worship Dynamism" },
+  { image: pics2, title: "Youth friven Experiences" },
+  { image: th1, title: "Word Driven" },
   { image: th11, title: "Mission Support" },
-  { image: th, title: "Mission Support" },
+  { image: th, title: "Word Depth" },
 ];
 
 export default function Programs() {
