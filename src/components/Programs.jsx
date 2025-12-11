@@ -16,9 +16,9 @@ const programs = [
   { image: church, title: "Prayer and Spiritual Warfare" },
   { image: crisis, title: "Heavenly Ministrations" },
   { image: pics1, title: "Worship Dynamism" },
-  { image: pics2, title: "Youth friven Experiences" },
+  { image: pics2, title: "Youth Driven Experiences" },
   { image: th1, title: "Word Driven" },
-  { image: th11, title: "Mission Support" },
+  { image: th11, title: "Word Depth Experience" },
   { image: th, title: "Word Depth" },
 ];
 
