@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Donation from './Pages/Donation'
 import Hfc from './Pages/Hfc'
 import JoinMember from './Pages/JoinMember'
+import NotFound from './Pages/NotFound'
 function App() {
 
   return (
@@ -20,8 +21,9 @@ function App() {
           <Route path='/' element={<Home></Home>} />
           <Route path='/about' element={<About></About>} />
           <Route path='/dashboard' element={<Dashboard></Dashboard>} />
-          <Route path='/join-member' element={<JoinMember />} />
-          <Route path='/donation' element={<Donation />} />
+          <Route path='join-member' element={<JoinMember />} />
+          <Route path='donation' element={<Donation />} />
+          <Route path='*' element={<NotFound />} />
           <Route path='/home-fellowship-centers' element={<Hfc />} />
         </Routes>
         <Footer />

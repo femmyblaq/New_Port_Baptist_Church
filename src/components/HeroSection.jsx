@@ -32,7 +32,7 @@ const HeroSection = () => (
 
       <div className="d-flex justify-content-center gap-3">
         <Link to='join-member' className="btn btn-light text-dark px-4">Join Now</Link>
-        <button className="btn btn-outline-light px-4">Make a Donation</button>
+        <Link to='donation'><button className="btn btn-outline-light px-4">Make a Donation</button></Link>
       </div>
     </div>
   </div>
