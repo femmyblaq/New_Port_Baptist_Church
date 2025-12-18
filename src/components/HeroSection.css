@@ -1,13 +1,74 @@
 /* src/components/HeroSection.css */
 .hero-section {
   height: 90vh;
-  background-image: url('../assets/church_wall.jpeg');
+  /* background-image: url('../assets/church_wall.jpeg'); */
   background-size: cover;
   /* background-position: center; */
   position: relative;
 }
 .hero-section .cont {
-  background-color: rgba(0, 0, 0, 0.7);
+  /* min-height: 100vh;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 40%,
+      rgba(230,240,255,0.6) 50%,
+      rgba(255,255,255,0) 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0) 30%,
+      rgba(240,248,255,0.7) 50%,
+      rgba(255,255,255,0) 70%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f5f9ff 100%
+    ) !important; */
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(210,230,255,0.8) 0%,
+      rgba(255,255,255,0) 35%
+    ),
+    linear-gradient(
+      -120deg,
+      rgba(255,235,210,0.8) 0%,
+      rgba(255,255,255,0) 35%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f1f5f9 100%
+    );
+
+
+}
+
+/* .hero-section .cont { */
+  /* background: linear-gradient(180deg, #ffffff 0%, #faf6f0 70%, #f2e9dc 100%); */
+  /* background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 60%, #e6f2ff 100%); */
+  /* background: linear-gradient(180deg, #ffffff 0%, #f3fbf6 65%, #e8f5ec 100%); */
+ /* min-height: 100vh;
+  background:
+    radial-gradient(
+      1200px 600px at 80% -10%,
+      rgba(224, 242, 255, 0.9),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 10% 20%,
+      rgba(255, 240, 220, 0.8),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fafc 55%,
+      #eef4f8 100%
+    );
   height: 100%;
   width: 100% !important;
-}
+} */
