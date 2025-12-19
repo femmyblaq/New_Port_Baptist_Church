@@ -21,8 +21,8 @@ function App() {
           <Route path='/' element={<Home></Home>} />
           <Route path='/about' element={<About></About>} />
           <Route path='/dashboard' element={<Dashboard></Dashboard>} />
-          <Route path='join-member' element={<JoinMember />} />
-          <Route path='donation' element={<Donation />} />
+          <Route path='/join-member' element={<JoinMember />} />
+          <Route path='/donation' element={<Donation />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/home-fellowship-centers' element={<Hfc />} />
         </Routes>

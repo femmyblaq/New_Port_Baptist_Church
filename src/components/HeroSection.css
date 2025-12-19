@@ -7,25 +7,22 @@
   position: relative;
 }
 .hero-section .cont {
-  /* min-height: 100vh;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0) 40%,
-      rgba(230,240,255,0.6) 50%,
-      rgba(255,255,255,0) 60%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0) 30%,
-      rgba(240,248,255,0.7) 50%,
-      rgba(255,255,255,0) 70%
-    ),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #f5f9ff 100%
-    ) !important; */
+   min-height: 80vh;
+  background: linear-gradient(
+  145deg,
+  #a8b9f6 15%,
+  #6998de 70%,
+  #cfe3ff 100%
+);
+/* background: linear-gradient(
+  160deg,
+  #f5fbe9 60%,
+  #edf4ff 60%,
+  #dbeafe 100%
+); */
+
+}
+/*
   min-height: 100vh;
   background:
     linear-gradient(

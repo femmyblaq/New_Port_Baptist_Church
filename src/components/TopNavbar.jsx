@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
 const TopNavbar = () => (
-  <Navbar expand="lg" style={{backgroundColor: "black"}} variant="dark" className="py-3">
+  <Navbar expand="lg" style={{backgroundColor: "black"}} variant="dark" className="py-0">
     <Container>
-      <Navbar.Brand href="/"><img width= "150" height="160" src={navLogo} alt="" /></Navbar.Brand>
+      <Navbar.Brand href="/"><img width= "100" height="110" src={navLogo} alt="" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
