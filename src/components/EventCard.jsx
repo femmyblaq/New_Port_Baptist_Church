@@ -1,236 +1,101 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Events.css";
+import { useEffect, useState } from "react";
+import { events } from "../data.js";
 
-export const events = {
-  "2025-08-01": ["Refreshing Hour", "Lydia Vigil"],
-  "2025-08-08": ["Couples Program"],
-  "2025-08-10": ["EC meeting"],
-  "2025-08-13": ["Annual VBS"],
-  "2025-08-14": ["Annual VBS"],
-  "2025-08-28": ["WMU Camp"],
-  "2025-08-29": ["WMU Camp"],
-  "2025-08-30": ["WMU Camp", "Apapa City Jesus walk", "Prayer Watch"],
-  "2025-08-31": ["Monthly Thanksgiving", "Sensitization on Business Skills"],
-  "2025-09-01": ["Refreshing Hour"],
-  "2025-09-05": ["Lydia Vigil"],
-  "2025-09-06": ["Men Annual Retreat"],
-  "2025-09-07": ["Communion Sunday", "GA Week"],
-  "2025-09-13": ["Health Retreat"],
-  "2025-09-14": ["EC meeting"],
-  "2025-09-27": ["Prison Outreach"],
-  "2025-09-28": ["African Praise", "Monthly Thanksgiving"],
-  "2025-09-29": ["Prayer Watch"],
-  "2025-09-30": ["Prayer Watch"],
-  "2025-10-01": ["Refreshing Hour"],
-  "2025-10-03": ["Lydia Vigil"],
-  "2025-10-04": ["Utility Strategy Session"],
-  "2025-10-05": ["National Day Service"],
-  "2025-10-12": ["EC meeting"],
-  "2025-10-18": ["Motherless/Disability Home Visit"],
-  "2025-10-25": ["Global Leadership Summit"],
-  "2025-10-26": ["Monthly Thanksgiving"],
-  "2025-10-30": ["Prayer Watch"],
-  "2025-10-31": ["Prayer Watch"],
-  "2025-11-01": ["Refreshing Hour"],
-  "2025-11-02": ["Communion Sunday"],
-  "2025-11-05": ["Global Leadership Summit Next Gen"],
-  "2025-11-07": ["Apapa Worship 5.0"],
-  "2025-11-09": ["EC meeting"],
-  "2025-11-14": ["WMU Prayer Conference"],
-  "2025-11-15": ["WMU Prayer Conference"],
-  "2025-11-29": ["Health Outreach"],
-  "2025-11-30": ["Prayer Watch", "Children Teachers Retreat", "Monthly Thanksgiving"],
-  "2025-12-01": ["Refreshing Hour"],
-  "2025-12-07": ["Annual Thanksgiving"],
-  "2025-12-13": ["Common Wealth", "Couples Dinner"],
-  "2025-12-14": ["Christmas Carol Children", "Christmas Carol", "EC meeting"],
-  "2025-12-20": ["Visitors Parlor Retreat"],
-  "2025-12-21": ["Children Christmas Party"],
-  "2025-12-25": ["Christmas"],
-  "2025-12-28": ["Monthly Thanksgiving"],
-  "2025-12-31": ["Cross Over Service"],
-};
+function getNextEvent(events) {
+  const now = new Date();
 
-export default function EventCarouselFade() {
-  const eventEntries = Object.entries(events);
-  const today = new Date().toISOString().split("T")[0];
+  return Object.entries(events)
+    .map(([dateStr, titles]) => {
+      const normalized = dateStr
+        .split("-")
+        .map(p => p.padStart(2, "0"))
+        .join("-");
 
-  // Find index of today or next event
-  const initialIndex =
-    eventEntries.findIndex(([date]) => date >= today) !== -1
-      ? eventEntries.findIndex(([date]) => date >= today)
-      : 0;
+      return {
+        date: new Date(`${normalized}T00:00:00`),
+        titles
+      };
+    })
+    .filter(e => e.date >= now)
+    .sort((a, b) => a.date - b.date)[0];
+}
 
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [fade, setFade] = useState(false);
-  const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+export default function EventCountdown() {
+  const [event, setEvent] = useState(null);
+  const [timeLeft, setTimeLeft] = useState(null);
 
-  // Countdown timer effect
   useEffect(() => {
-    const calculateCountdown = () => {
-      const [eventDate] = eventEntries[currentIndex];
-      const eventDateTime = new Date(eventDate).getTime();
-      const now = new Date().getTime();
-      const difference = eventDateTime - now;
+    setEvent(getNextEvent(events));
+  }, []);
 
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
+  useEffect(() => {
+    if (!event) return;
 
-        setCountdown({ days, hours, minutes, seconds });
-      } else {
-        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const timer = setInterval(() => {
+      const diff = event.date - new Date();
+
+      if (diff <= 0) {
+        setEvent(getNextEvent(events));
+        return;
       }
-    };
 
-    calculateCountdown();
-    const timer = setInterval(calculateCountdown, 1000);
+      setTimeLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
+        minutes: Math.floor(diff / (1000 * 60)) % 60,
+        seconds: Math.floor(diff / 1000) % 60
+      });
+    }, 1000);
+
     return () => clearInterval(timer);
-  }, [currentIndex, eventEntries]);
+  }, [event]);
 
-  // Auto-advance carousel every 8 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % eventEntries.length);
-      setFade(false);
-    }, 400);
-  };
-
-  const handlePrev = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentIndex(
-        (prev) => (prev - 1 + eventEntries.length) % eventEntries.length
-      );
-      setFade(false);
-    }, 400);
-  };
-
-  const visibleEvents = [
-    eventEntries[(currentIndex - 1 + eventEntries.length) % eventEntries.length],
-    eventEntries[currentIndex],
-    eventEntries[(currentIndex + 1) % eventEntries.length],
-  ];
-
-  const [eventDate, activities] = eventEntries[currentIndex];
+  if (!event || !timeLeft) return null;
 
   return (
-    <div className="container-fluid py-5 px-0">
-      {/* Beautiful Horizontal Countdown Timer */}
-      <div className="countdown-hero">
-        <div className="countdown-timer-horizontal">
-          <div className="timer-unit">
-            <div className="timer-value">{countdown.days}</div>
-            <div className="timer-label">Days</div>
+    <div className="my-5 py-5">
+    <div className="container my-5">
+      <div className="row justify-content-center">
+        <div className="col-lg-8 col-md-10 col-12">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body p-4 p-md-5 text-center">
+
+              <span className="badge bg-primary mb-3 px-3 py-2">
+                Upcoming Event
+              </span>
+
+              <h2 className="fw-bold mb-2" style={{textWrap: "wrap"}}>
+                {event.titles.join(" / ")}
+              </h2>
+
+              <p className="text-muted mb-4">
+                {event.date.toDateString()}
+              </p>
+
+              <div className="row g-3 justify-content-center">
+                <CountdownBox label="Days" value={timeLeft.days} />
+                <CountdownBox label="Hours" value={timeLeft.hours} />
+                <CountdownBox label="Minutes" value={timeLeft.minutes} />
+                <CountdownBox label="Seconds" value={timeLeft.seconds} />
+              </div>
+
+            </div>
           </div>
-          <span className="timer-arrow">→</span>
-          <div className="timer-unit">
-            <div className="timer-value">{String(countdown.hours).padStart(2, "0")}</div>
-            <div className="timer-label">Hrs</div>
-          </div>
-          <span className="timer-arrow">→</span>
-          <div className="timer-unit">
-            <div className="timer-value">{String(countdown.minutes).padStart(2, "0")}</div>
-            <div className="timer-label">Min</div>
-          </div>
-          <span className="timer-arrow">→</span>
-          <div className="timer-unit">
-            <div className="timer-value">{String(countdown.seconds).padStart(2, "0")}</div>
-            <div className="timer-label">Sec</div>
-          </div>
-        </div>
-        <div className="countdown-event-info mt-3">
-          <span className="countdown-event-date">
-            {new Date(eventDate).toLocaleDateString("en-US", {
-              weekday: "long",
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
-          <span className="countdown-event-activities ms-3">
-            {activities.slice(0, 2).join(", ")}
-            {activities.length > 2 && `, +${activities.length - 2} more`}
-          </span>
         </div>
       </div>
+    </div>
+    </div>
+  );
+}
 
-      <div className="container py-5 my-5 px-0">
-        <h2 className="text-center fw-bold mb-4 text-primary">
-          Upcoming Church Events
-        </h2>
-        <div className="position-relative d-flex justify-content-center align-items-center">
-          <button
-            className="btn btn-outline-primary position-absolute start-0 translate-middle-y"
-            style={{ top: "50%" }}
-            onClick={handlePrev}
-          >
-            <i className="ri-arrow-left-long-line"></i>
-          </button>
-          <div
-  className={` justify-content-center gap-4 flex-wrap event-carousel-wrapper ${
-    fade ? "fade-transition" : ""
-  }`}
->
-
-            {visibleEvents.map(([date, activities], idx) => (
-              <div
-                key={date}
-                className={`card border-0 shadow-lg text-center py-4 px-3 event-carousel-card ${idx === 1 ? "active-card" : "inactive-card"
-                  }`}
-                style={{
-                  width: "40rem",
-                  transition: "all 0.6s ease",
-                }}
-              >
-
-                <h5
-                  className={`fw-bold mb-3 ${idx === 1 ? "text-primary" : "text-secondary"
-                    }`}
-                >
-                  {new Date(date).toLocaleDateString("en-US", {
-                    weekday: "long",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </h5>
-                <ul className="list-unstyled">
-                  {activities.map((event, i) => (
-                    <li key={i} className="py-1">
-                      <i className="bi bi-calendar-event me-2 text-primary"></i>
-                      {event}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <button
-            className="btn btn-outline-primary position-absolute end-0 translate-middle-y"
-            style={{ top: "50%" }}
-            onClick={handleNext}
-          >
-            <i className="ri-arrow-right-long-line"></i>
-          </button>
+function CountdownBox({ label, value }) {
+  return (
+    <div className="col-6 col-sm-3 my-4">
+      <div className="bg-dark text-white rounded-3 py-3 shadow-sm">
+        <div className="fs-2 fw-bold">{value}</div>
+        <div className="small text-uppercase text-secondary">
+          {label}
         </div>
-        <p className="text-center mt-5 text-muted small">
-          {`Showing event ${currentIndex + 1} of ${eventEntries.length}`}
-        </p>
       </div>
     </div>
   );
