@@ -22,6 +22,7 @@ const HeroSection = () => {
         {/* Main Heading with Animation */}
         <div className="heading-container">
           <h1 className="main-heading">
+            <span className="heading-line">My Convenant Year of </span>
             <span className="heading-line">ALIGNMENT</span>
             <span className="heading-line">WITH GOD</span>
           </h1>
@@ -53,23 +54,23 @@ const HeroSection = () => {
             <div className="service-times">
               <div className="service-time">
                 <i className="bi bi-clock"></i>
-                <span>Sundays: 8:00 AM & 10:30 AM</span>
+                <span>Sundays: 8:00 AM - 10:30 AM</span>
               </div>
               <div className="service-time">
                 <i className="bi bi-geo-alt"></i>
-                <span>123 Church Street, Faith City</span>
+                <span>63A, Oscar Ibru Way </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="scroll-indicator">
+        {/* <div className="scroll-indicator">
           <div className="mouse">
             <div className="wheel"></div>
           </div>
           <p className="scroll-text">Scroll to explore</p>
-        </div>
+        </div> */}
       </div>
 
       {/* Decorative Elements */}

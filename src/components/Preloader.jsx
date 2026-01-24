@@ -21,7 +21,7 @@ const Preloader = () => {
           <div className="spinner-inner"></div>
         </div>
         <div className="preloader-text">
-          <h3 className="church-name">First Baptist Church</h3>
+          <h3 className="church-name">New Port Baptist Church</h3>
           <p className="church-tagline">Bringing Hope, Building Faith</p>
         </div>
         <div className="progress-container">
