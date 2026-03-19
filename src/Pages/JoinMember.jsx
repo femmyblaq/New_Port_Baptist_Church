@@ -12,7 +12,15 @@ export default function JoinMember() {
           <img className='border-2' width={500} src={gathering} alt="" />
         </div>
         <div className="col-lg-6 px-5">
-          <FormComponent />
+          {/* <FormComponent /> */}
+          <div className="container my-4">
+  <div className="border rounded overflow-auto" style={{ height: "500px" }}>
+    
+          <iframe width="100%"
+      height="100%" 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSe3tb5cg9vi08OC2AMepEDFD_hQNzd78ed8y0FM-vph3mIxKQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</div>
         </div>
       </div>
     // </Container>

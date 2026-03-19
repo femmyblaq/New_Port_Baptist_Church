@@ -12,8 +12,11 @@ import Hfc from './Pages/Hfc'
 import JoinMember from './Pages/JoinMember'
 import NotFound from './Pages/NotFound'
 import { useEffect, useState } from 'react'
+import AdminGate from './components/AdminGate'
+
+
 function App() {
-const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Wait for all images to load
@@ -53,7 +56,7 @@ const [loading, setLoading] = useState(true);
 
     // Start checking images after a small delay
     const timer = setTimeout(loadImages, 100);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -73,12 +76,19 @@ const [loading, setLoading] = useState(true);
     <>
       <ThemeProvider>
         {loading && <Preloader />}
-            <TopNavbar></TopNavbar>
+        <TopNavbar></TopNavbar>
         <Routes>
           <Route path='/' element={<Home></Home>} />
           <Route path='/about' element={<About></About>} />
           <Route path='/dashboard' element={<Dashboard></Dashboard>} />
-          <Route path='/join-member' element={<JoinMember />} />
+          <Route
+            path="/join-member"
+            element={
+              <AdminGate>
+                <JoinMember />
+              </AdminGate>
+            }
+          />
           <Route path='/donation' element={<Donation />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/home-fellowship-centers' element={<Hfc />} />
