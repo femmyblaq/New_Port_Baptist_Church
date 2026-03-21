@@ -18,7 +18,10 @@ export default function JoinMember() {
     
           <iframe width="100%"
       height="100%" 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSe3tb5cg9vi08OC2AMepEDFD_hQNzd78ed8y0FM-vph3mIxKQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeRugpqkorXNUlqeUQI0JFFm0bYzDCUYeux00fTnbvsToiDnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+    {/* https://docs.google.com/forms/d/e/1FAIpQLSeRugpqkorXNUlqeUQI0JFFm0bYzDCUYeux00fTnbvsToiDnw/viewform
+      https://docs.google.com/forms/d/e/1FAIpQLSe3tb5cg9vi08OC2AMepEDFD_hQNzd78ed8y0FM-vph3mIxKQ/viewform?usp=sharing&ouid=108989367468174075769 */}
   </div>
 </div>
         </div>
